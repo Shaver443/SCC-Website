@@ -19,10 +19,17 @@ logging.basicConfig(level=logging.INFO)
 def verify_turnstile(response):
     secret_key = current_app.config['TURNSTILE_SECRET_KEY']
     payload = {'secret': secret_key, 'response': response}
-    response = requests.post('https://challenges.cloudflare.com/turnstile/v0/siteverify', data=payload)
-    result = response.json()
-    logging.info("CAPTCHA verification result: %s", result)
-    return result.get('success', False)
+    logging.info("Verifying CAPTCHA with payload: %s", payload)
+    try:
+        response = requests.post('https://challenges.cloudflare.com/turnstile/v0/siteverify', data=payload)
+        response.raise_for_status()
+        result = response.json()
+        logging.info("CAPTCHA verification response: %s", result)
+        return result.get('success', False)
+    except requests.RequestException as e:
+        logging.error("CAPTCHA verification request failed: %s", e)
+        return False
+
 
 def send_email_via_postmark(name, email, phone, message):
     postmark_api_url = "https://api.postmarkapp.com/email"
