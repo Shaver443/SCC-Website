@@ -1,9 +1,15 @@
+import os
 import requests
 from flask import Flask, render_template, flash, redirect, url_for, request, current_app
 from forms import ContactForm
 from config import Config
+from dotenv import load_dotenv
 
 app = Flask(__name__)
+
+if os.getenv("FLASK_ENV") != "production":
+    load_dotenv()  # Load environment variables from .env file
+
 app.config.from_object(Config)
 
 def verify_turnstile(response):
