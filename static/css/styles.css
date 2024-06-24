@@ -1,0 +1,277 @@
+:root {
+    --scc-grey: #151515;
+    --scc-navy: #00293D;
+    --scc-blue: #00A6FF;
+    --scc-yellow: #FFD300;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--scc-grey);
+}
+
+header {
+    display: flex;
+    color: white;
+    margin: 50px;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 2.4rem;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 20px;
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+main {
+    color: white;
+    margin: 50px;
+}
+
+.hero-container {
+    margin-top: 250px
+}
+
+.hero-text {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 2.8rem;
+    width: 66%;
+    max-width: 1420px;
+    margin-bottom: 100px;
+}
+
+.hero-button-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.hero-button {
+    display: flex;
+    border: 2px solid white;
+    padding: 20px;
+    width: 500px;
+    height: 50px;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 2rem;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--scc-blue)
+}
+
+.disabled {
+    border-color: grey;
+    color: grey;
+    cursor: not-allowed;
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 40;
+    font-size: 2.6rem !important;
+}
+
+.content-container {
+    font-family: "Montserrat", sans-serif;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    color: white;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column !important;
+    width: 100%;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 20px;
+}
+
+.flex-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-input, .form-textarea {
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid var(--scc-yellow);
+    margin-top: 5px;
+    background-color: var(--scc-grey);
+    color: white;
+    font-family: "Montserrat", sans-serif;
+}
+
+.form-input:focus-visible, .form-textarea:focus-visible {
+    border-radius: 0px !important;
+    border: 2px solid white !important;
+}
+
+.form-textarea {
+    height: 150px;
+    resize: none;
+}
+
+.form-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: white;
+    background-color: var(--scc-blue);
+    border: none;
+    cursor: pointer;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 800;
+}
+
+.form-button:hover {
+    background-color: var(--scc-navy);
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+input:focus::-webkit-input-placeholder, 
+textarea:focus::-webkit-input-placeholder {
+    color: inherit;
+    transition: opacity 0.3s ease;
+}
+
+input:focus::-moz-placeholder, 
+textarea:focus::-moz-placeholder {
+    color: inherit;
+    transition: opacity 0.3s ease;
+}
+
+input:focus:-ms-input-placeholder, 
+textarea:focus:-ms-input-placeholder {
+    color: inherit;
+    transition: opacity 0.3s ease;
+}
+
+input:focus::placeholder, 
+textarea:focus::placeholder {
+    color: inherit;
+    transition: opacity 0.3s ease;
+}
+
+.about-container {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+}
+
+.text-container {
+    font-size: 1rem;
+}
+
+.photo-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+img {
+    width: 250px;
+}
+
+@media screen and (max-width: 1400px) {
+
+    .hero-container {
+        margin-top: 50px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+
+    .hero-text {
+        font-size: 2.2rem;
+        margin-bottom: 50px;
+    }
+
+    .hero-button-container {
+        flex-wrap: wrap;
+    }
+
+
+}
+
+@media screen and (max-width: 800px) {
+
+    .flex-container {
+        flex-direction: column;
+    }
+
+    .about-container {
+        flex-wrap: wrap;
+    }
+
+}
+
+@media screen and (max-width: 450px) {
+
+    .hero-text {
+        font-size: 1.4rem;
+        margin-bottom: 50px;
+    }
+
+    .hero-button {
+        height: 40px;
+        font-size: 1.4rem;
+    }
+
+    .material-symbols-outlined {
+        font-size: 1.4rem !important;
+    }
+
+    .form-textarea {
+        height: 80px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+
+    .title {
+        font-size: 1.6rem;
+    }
+
+    .hero-text {
+        font-size: 1.2rem;
+        margin-bottom: 50px;
+    }
+
+    .hero-button {
+        height: 30px;
+        font-size: 1.4rem;
+    }
+}

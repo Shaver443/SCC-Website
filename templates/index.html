@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="hero-container">
+<div class="hero-text">
+    <h1>Driving Business Success with IT <span style="color: var(--scc-yellow); text-decoration: underline;">Excellence</span>.</h1>
+</div>
+<div class="hero-button-container">
+    <a class="hero-button" href="{{ url_for('contact') }}"><span class="material-symbols-outlined">arrow_right_alt</span>Contact</a>
+    <a class="hero-button disabled" href="/"><span class="material-symbols-outlined">arrow_right_alt</span>Client Portal</a>
+    <a class="hero-button disabled" href="/"><span class="material-symbols-outlined">arrow_right_alt</span>Shop</a>
+</div>
+</div>
+{% endblock %}
